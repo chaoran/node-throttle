@@ -3,6 +3,11 @@ node-throttle
 
 A Node.js module that helps with rate limiting.
 
+The idea behind this module is originally by Chris O'Hara (http://chris6f.com/rate-limiting-with-redis). 
+However, the algorithm he presented can cause false-positive throttling in certain cases.
+
+I adjusted O'Hara's algorithm in this module. This module do not yield false-positive throttling.
+
 ## Install
 Install via Node Package Manager (NPM):
 
@@ -36,7 +41,7 @@ throttle.increment(1, function(err, count) {
 ```
 default_options = {
     span: 15 * 60 * 1000, // value should be in milliseconds.
-    accuracy: 60 * 1000   // value should be in milliseconds. ***NOTICE: span should be divisible by accuracy***.
+    accuracy: 60 * 1000   // value should be in milliseconds. ***NOTE: span should be divisible by accuracy***.
 }
 ```
 
@@ -74,9 +79,9 @@ throttle.increment(1, function(err, count) {
 }
 ```
 
-## LICENSE - "MIT License"
+## LICENSE - MIT License
 
-Copyright (c) 2013 Chaoran Yang, chaorany@me.com
+Copyright (c) 2013 Chaoran Yang, charoany (AT) me (dot) com
 
 Permission is hereby granted, free of charge, to any person
 obtaining a copy of this software and associated documentation
