@@ -62,6 +62,7 @@ throttle.read(function(err, count) {
     if (err) throw err
     console.log('current count:', count)
 })
+```
 
 ### increment(n, callback)
 
