@@ -74,7 +74,7 @@ throttle.increment(1, function(err, count) {
 }
 ```
 
-## LICENSE - "MIT License"
+## LICENSE - MIT License
 
 Copyright (c) 2013 Chaoran Yang, charoany (AT) me (dot) com
 
