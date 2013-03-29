@@ -19,7 +19,7 @@ Throttle.configure({
 var key = ip_address + ':' + url
 var throttle = new Throttle(key, {
   span: 15 * 60 * 1000, // 15 mins
-  accuracy: 15          // accuracy is within span / accuracy = 1 min
+  accuracy: 60          // accuracy 1 min
 })
 
 throttle.increment(1, function(err, count) {
@@ -31,3 +31,23 @@ throttle.increment(1, function(err, count) {
 })
 ```
 
+## APIs
+### new Throttle(key[, options])
+```
+default_options = {
+    span: 15 * 60 * 1000, // value should be in milliseconds.
+    accuracy: 1 * 60 // value should be in milliseconds.
+}
+```
+
+Create a new throttle instance. Throttle instances with the same key share the same internal status, e.g.
+```javascript
+var th1 = new Throttle('key')
+var th2 = new Throttle('key')
+th1.increment(1, function(err, count) { 
+    assert.equal(count, 1)
+    th2.increment(1, function(err, count) {
+        assert.equal(count, 2)
+    })
+})
+```
