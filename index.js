@@ -11,6 +11,7 @@ var Throttle = module.exports = function(key, options) {
 }
 
 Throttle.configure = function(config) {
+  config = config || {}
   var port = config.port || 6379
     , host = config.host || 'localhost'
   delete config.port
