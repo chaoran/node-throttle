@@ -11,7 +11,7 @@ I adjusted O'Hara's algorithm in this module. This module do not yield false-pos
 ## Install
 Install via Node Package Manager (NPM):
 
-    npm install finish
+    npm install redis-throttle
 
 ## Quick Example
 ```javascript
