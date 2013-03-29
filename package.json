@@ -1,6 +1,6 @@
 {
   "name": "node-throttle",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "A Node.js module that helps with rate limiting",
   "main": "index.js",
   "scripts": {
