@@ -52,4 +52,23 @@ th1.increment(1, function(err, count) {
 })
 ```
 
-Different accuracies will result in different costs. The complexity of read/increment is O(n), where __n__ is __span__ / __accuracy__.
+Different accuracies will result in different costs. The complexity of read/increment operation is O(n), where __n__ is __span__ / __accuracy__.
+
+### read(callback)
+
+Read value of a throttle instance, without increment it.
+```javascript
+throttle.read(function(err, count) {
+    if (err) throw err
+    console.log('current count:', count)
+})
+
+### increment(n, callback)
+
+Increment value of a throttle instance by __n__. Returns the resulted value through callback function.
+```javascript
+throttle.increment(1, function(err, count) {
+    if (err) throw err
+    console.log('value after increment: count')
+}
+```
