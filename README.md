@@ -37,6 +37,12 @@ throttle.increment(1, function(err, count) {
 ```
 
 ## APIs
+### Throttle.configure([options])
+
+Intialize the Redis client used by Throttle. 
+Options can include __port__, __host__ and other options accepted by [node_redis](http://github.com/mranney/node_redis).
+This method should be called before any other methods after requiring the module.
+
 ### new Throttle(key[, options])
 ```
 default_options = {
