@@ -11,8 +11,8 @@ var Throttle = module.exports = function(key, options) {
 }
 
 Throttle.configure = function(config) {
-  var port = config.port
-    , host = config.host
+  var port = config.port || 6379
+    , host = config.host || 'localhost'
   delete config.port
   delete config.host
   this.rdb = redis.createClient(port, host, config)
