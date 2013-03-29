@@ -36,7 +36,7 @@ throttle.increment(1, function(err, count) {
 ```
 default_options = {
     span: 15 * 60 * 1000, // value should be in milliseconds.
-    accuracy: 60 * 1000   // value should be in milliseconds. ***NOTICE: span should be divisible by accuracy***.
+    accuracy: 60 * 1000   // value should be in milliseconds. ***NOTE: span should be divisible by accuracy***.
 }
 ```
 
