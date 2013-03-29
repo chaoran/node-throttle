@@ -1,0 +1,27 @@
+{
+  "name": "node-throttle",
+  "version": "0.0.0",
+  "description": "A Node.js module that helps with rate limiting",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chaoran/node-throttle.git"
+  },
+  "keywords": [
+    "rate",
+    "limiting",
+    "throttle",
+    "redis"
+  ],
+  "author": "Chaoran Yang",
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "gitHead": "b36238030b5f28191b68cd15fdf6ee813e180df4",
+  "dependencies": {
+    "finish": "*",
+    "redis": "*"
+  }
+}
