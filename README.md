@@ -15,7 +15,7 @@ Install via Node Package Manager (NPM):
 
 ## Quick Example
 ```javascript
-var Throttle = require('throttle')
+var Throttle = require('redis-throttle')
 Throttle.configure({
   port: 6300,
   host: 'localhost'
