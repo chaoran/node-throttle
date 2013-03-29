@@ -19,7 +19,7 @@ Throttle.configure({
 var key = ip_address + ':' + url
 var throttle = new Throttle(key, {
   span: 15 * 60 * 1000, // 15 mins
-  accuracy: 60          // accuracy 1 min
+  accuracy: 60 * 1000   // accuracy 1 min
 })
 
 throttle.increment(1, function(err, count) {
@@ -36,7 +36,7 @@ throttle.increment(1, function(err, count) {
 ```
 default_options = {
     span: 15 * 60 * 1000, // value should be in milliseconds.
-    accuracy: 1 * 60 // value should be in milliseconds.
+    accuracy: 60 * 1000   // value should be in milliseconds. span should be divisible by accuracy.
 }
 ```
 
@@ -51,3 +51,5 @@ th1.increment(1, function(err, count) {
     })
 })
 ```
+
+Different accuracies will result in different costs. The complexity of read/increment is O(n), where __n__ is __span__/__accuracy__.
