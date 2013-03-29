@@ -26,12 +26,12 @@ describe('Throttle', function() {
   describe('new Throttle()', function() {
     it('create a new throttle', function() {
       throttle = new Throttle('test', {
-        span: 1000,
-        accuracy: 10
+        span: 500,
+        accuracy: 50
       })
-      assert.equal(throttle.interval, 100)
-      assert.equal(throttle.accuracy, 10)
-      assert.equal(throttle.span, 1000)
+      assert.equal(throttle.nBuckets, 10)
+      assert.equal(throttle.accuracy, 50)
+      assert.equal(throttle.span, 500)
     })
   })
 
@@ -50,7 +50,7 @@ describe('Throttle', function() {
           assert.equal(count, 0, count)
           done()
         })
-      }, 1200)
+      }, 600)
     })
   })
 
@@ -69,7 +69,7 @@ describe('Throttle', function() {
           assert.equal(count, 2, count)
           done()
         })
-      }, 400)
+      }, 200)
     })
     it('increment count after first one expire', function(done) {
       setTimeout(function() {
@@ -78,7 +78,16 @@ describe('Throttle', function() {
           assert.equal(count, 2, count)
           done()
         })
-      }, 700)
+      }, 400)
+    })
+    it('reads zero after expiration', function(done) {
+      setTimeout(function() {
+        throttle.read(function(err, count) {
+          assert.equal(err, null, err)
+          assert.equal(count, 0, count)
+          done()
+        })
+      }, 1100)
     })
   })
 })
