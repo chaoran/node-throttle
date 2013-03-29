@@ -76,7 +76,7 @@ throttle.increment(1, function(err, count) {
 
 ## LICENSE - "MIT License"
 
-Copyright (c) 2013 Chaoran Yang, chaorany@me.com
+Copyright (c) 2013 Chaoran Yang, charoany (AT) me (dot) com
 
 Permission is hereby granted, free of charge, to any person
 obtaining a copy of this software and associated documentation
