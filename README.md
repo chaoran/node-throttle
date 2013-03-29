@@ -52,4 +52,4 @@ th1.increment(1, function(err, count) {
 })
 ```
 
-Different accuracies will result in different costs. The complexity of read/increment is O(n), where __n__ is __span__/__accuracy__.
+Different accuracies will result in different costs. The complexity of read/increment is O(n), where __n__ is __span__ / __accuracy__.
