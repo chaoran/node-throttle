@@ -2,7 +2,10 @@ node-throttle
 =============
 
 A Node.js module that helps with rate limiting.
-The idea behind this module is originally by Chris O'Hara (http://chris6f.com/rate-limiting-with-redis). However, the algorithm he presented can cause false-positive error in certain cases.
+
+The idea behind this module is originally by Chris O'Hara (http://chris6f.com/rate-limiting-with-redis). 
+However, the algorithm he presented can cause false-positive error in certain cases.
+
 This module do not yield false-positive throttling.
 
 ## Install
