@@ -91,7 +91,7 @@ span 10s, accuracy 10 -> 6524 ops/s
 span 10s, accuracy 20 -> 5357 ops/s
 span 5s, accuracy 10 -> 6023 ops/s
 ```
-A simple presure test program is included in [presure.js](http://github.com/chaoran/node-throttle/blob/master/pressure.js)
+A simple presure test program is included in [pressure.js](http://github.com/chaoran/node-throttle/blob/master/pressure.js)
 
 ## LICENSE - MIT License
 
