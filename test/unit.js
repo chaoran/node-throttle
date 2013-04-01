@@ -27,10 +27,10 @@ describe('Throttle', function() {
     it('create a new throttle', function() {
       throttle = new Throttle('test', {
         span: 500,
-        accuracy: 50
+        accuracy: 10
       })
-      assert.equal(throttle.nBuckets, 10)
-      assert.equal(throttle.accuracy, 50)
+      assert.equal(throttle.interval, 50)
+      assert.equal(throttle.accuracy, 10)
       assert.equal(throttle.span, 500)
     })
   })

@@ -24,7 +24,7 @@ Throttle.configure({
 var key = ip_address + ':' + url
 var throttle = new Throttle(key, {
   span: 15 * 60 * 1000, // 15 mins
-  accuracy: 60 * 1000   // accuracy 1 min
+  accuracy: 10          // margin of error = span / accuracy
 })
 
 throttle.increment(1, function(err, count) {
@@ -47,7 +47,7 @@ This method should be called before any other methods after requiring the module
 ```
 default_options = {
     span: 15 * 60 * 1000, // value should be in milliseconds.
-    accuracy: 60 * 1000   // value should be in milliseconds. ***NOTE: span should be divisible by accuracy***.
+    accuracy: 10          // value should be in milliseconds. ***NOTE: span should be divisible by accuracy***.
 }
 ```
 
@@ -63,7 +63,7 @@ th1.increment(1, function(err, count) {
 })
 ```
 
-Different accuracies will result in different costs. The complexity of read/increment operation is O(n), where __n__ is __span__ / __accuracy__.
+Different accuracies will result in different costs. The complexity of read/increment operation is O(n), where __n__ is __accuracy__.
 
 ### read(callback)
 
@@ -84,6 +84,14 @@ throttle.increment(1, function(err, count) {
     console.log('value after increment: count')
 }
 ```
+
+## Performance
+```
+span 10s, accuracy 10 -> 6524 ops/s
+span 10s, accuracy 20 -> 5357 ops/s
+span 5s, accuracy 10 -> 6023 ops/s
+```
+A simple presure test program is included in [presure.js](http://github.com/chaoran/node-throttle/blob/master/pressure.js)
 
 ## LICENSE - MIT License
 
