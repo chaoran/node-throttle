@@ -17,6 +17,10 @@ Throttle.configure = function(config) {
   delete config.port
   delete config.host
   this.rdb = redis.createClient(port, host, config)
+
+  this.rdb.on('error', function(err){
+    console.log('redis-throttle Redis connection failed, error: ' + err );
+  });
 }
 
 Throttle.prototype.increment = function(n, callback) {
